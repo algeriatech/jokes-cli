@@ -3,9 +3,6 @@
     "version": "0.0.1",
     "description": "Simple CLI App for your everyday jokes !",
     "author": "Houssem Yahiaoui <houssem.yahiaoui.ai@gmail.com>",
-    "scripts": {
-        "start": "node app.js",
-    },
     "main": "app.js",
     "repository": {
         "type": "git",
@@ -15,9 +12,16 @@
         "url": "https://github.com/algeriatech/jokes-cli/issues"
     },
     "keywords": [
-        "joke.dz",
-        "cli"
+            "joke.dz",
+            "cli"
     ],
+    "bin": {
+        "jokes-cli": "./jokes-cli.js"
+    },
+    "scripts": {
+        "jokes-cli": "./jokes-cli.js",
+        "start": "node app.js"
+    },
     "dependencies": {
         "commander": "^2.9.0",
         "figlet": "^1.2.0",
