@@ -1,6 +1,5 @@
 #! /usr/bin/env node
 const jokes      = require('jokes.dz')
-const inquirer   = require('inquirer')
 
 /**
  * Parse Arguments to get command and executing it

@@ -23,7 +23,6 @@
         "start": "node app.js"
     },
     "dependencies": {
-        "inquirer": "^2.0.0",
         "commander": "^2.9.0",
         "figlet": "^1.2.0",
         "jokes.dz": "^0.1.0",
