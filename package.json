@@ -1,0 +1,14 @@
+{
+  "name": "jokes-cli",
+  "version": "0.0.1",
+  "description": "Simple CLI App for your everyday jokes !",
+  "main": "app.js",
+  "author": "Houssem Yahiaoui <houssem.yahiaoui.ai@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "figlet": "^1.2.0",
+    "jokes.dz": "^0.1.0",
+    "ora": "^0.4.1"
+  }
+}
