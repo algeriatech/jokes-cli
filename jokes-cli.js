@@ -1,6 +1,6 @@
 #! /usr/bin/env node
-const jokes      = require('./jokes.js')
-const inquirer  = require('inquirer')
+const jokes      = require('jokes.dz')
+const inquirer   = require('inquirer')
 
 /**
  * Parse Arguments to get command and executing it
@@ -18,8 +18,8 @@ let parseCommand = () => {
 
     /** Get Command from the first argument **/
     switch (arguments[0]) {
-        case "add":
-            // TODO : add joke (after add firebase)
+        case "help":
+            printHelp()
             break
         case "all":
             all()
@@ -40,44 +40,17 @@ let parseCommand = () => {
            filterByTag(arguments.slice(1))
             break
         default:
-            // TODO : Unknown Arguments Error Msg
+            throw new Error('Unknown Command ~ use "jokes-cli help" command')
             break
 
     }
 }
 
 /**
- * Adding a joke process (feature)
- */
-let add = () => {
-    inquirer.prompt({
-            type    : 'list',
-            name    : 'lang',
-            message : 'What is the language of your joke ?',
-            choices : ['ar', 'fr', 'en']
-        },{
-            type    : 'input',
-            name    : 'joke',
-            message : 'tape your joke : '  
-        },{
-            type    : 'input',
-            name    : 'img',
-            message : 'image (url) : '  
-        },{
-            type    : 'input',
-            name    : 'tags',
-            message : 'tags : '  
-
-    }).then(function (answers) {
-        console.log('your answer is : ' + answers.joke)
-    })    
-}
-
-/**
  * Get all jokes and printing them
  */
 let all = () => {
-    let result = jokes.all()
+    let result = jokes.all
     printJson(result)
 }
 
@@ -93,8 +66,8 @@ let random = () => {
  * Get count jokes and print it
  */
 let count = () => {
-    let result = jokes.count();
-    console.log(result)
+    let result = jokes.count;
+    console.log('Jokes count : ' + result)
 }
 
 /**
@@ -132,7 +105,15 @@ let filterByTag = (tags = []) => {
  * Print Help
  */
 let printHelp = () => {
-    console.log("HEEEEEEELP")
+    console.log("Jokes-cli : help")
+    console.log("It's your typical Algeria Jokes now residing on your own terminal")
+    console.log("Arguments : ")
+    console.log(" - all\t: get all jokes")
+    console.log(" - random\t: get a random joke")
+    console.log(" - count\t: get number of jokes")
+    console.log(" - search\t: find jokes by a regular expression 'jokes-cli search regex'")
+    console.log(" - filter-by-lang\t: filter jokes by language 'jokes-cli filter-by-lang fr'")
+    console.log(" - filter-by-tag\t: filter jokes by tag 'jokes-cli filter-by-tag tag1 tag2'")
     // TODO: more help
 }
 

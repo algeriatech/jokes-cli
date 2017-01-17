@@ -12,8 +12,8 @@
         "url": "https://github.com/algeriatech/jokes-cli/issues"
     },
     "keywords": [
-        "joke.dz",
-        "cli"
+            "joke.dz",
+            "cli"
     ],
     "bin": {
         "jokes-cli": "./jokes-cli.js"
@@ -26,6 +26,7 @@
         "inquirer": "^2.0.0",
         "commander": "^2.9.0",
         "figlet": "^1.2.0",
+        "jokes.dz": "^0.1.0",
         "ora": "^0.4.1"
     },
     "license": "MIT"
